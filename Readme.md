@@ -26,7 +26,7 @@ Terraform module for creating Azure Key Vaults with the following optional featu
 The module outputs these variables.
 |Name|Example|Description|
 |----|-------|-----------|
-|    |       |           |
+|ph  |ph     |ph         |
 
 ## Example
 ``` terraform
