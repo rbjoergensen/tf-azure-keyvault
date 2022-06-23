@@ -3,7 +3,7 @@ name: Docs update
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - '.github/docs.yml'
       - '*.md'
