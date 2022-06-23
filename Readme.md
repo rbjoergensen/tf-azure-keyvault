@@ -72,4 +72,14 @@ module "keyvault" {
   acl_ip_whitelist        = [ "195.192.234.169/32" ]
   acl_default_action      = "Deny"
 }
+
+resource "azurerm_resource_group" "main" {
+  provider = azurerm.sandbox
+  name     = "tf-module-test"
+  location = "West Europe"
+
+  tags = {
+    managed-by = "terraform"
+  }
+}
 ```
