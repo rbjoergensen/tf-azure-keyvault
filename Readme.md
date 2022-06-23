@@ -7,20 +7,20 @@ Terraform module for creating Azure Key Vaults with the following optional featu
 - Creation of an associated a managed identity for service authentication
 
 ## Parameters
-|Parameter              |Required|Type        |Description|
-|-----------------------|--------|------------|-----------|
-|tenant_id              |true    |string      |The tenant id|
-|resourcegroup          |true    |string      |The name of the resource group|
-|location               |true    |string      |The locality of the resource group|
-|keyvault_name          |true    |string      |The unique name of the key vault|
-|enable_purge_protection|true    |bool        |Wether to enable purge protection|
-|acl_ip_whitelist       |true    |list(string)|A list of addresses to whitelist for access. Eg. ["195.192.234.169/32"]|
-|acl_default_action     |true    |string      |Action for requests from addresses not in the whitelist. (Allow or Deny)|
-|acl_service_bypass     |true    |string      |Bypass ACL (AzureServices or None)|
-|secret_reader_groups   |true    |list(string)|Name of the Azure AD groups to grant secret reader|
-|vault_admin_groups     |true    |list(string)|Name of the Azure AD groups to grant vault admin|
-|create_az_application  |true    |bool        |Wether to create an Azure AD application and a certificate|
-|create_managed_identity|true    |bool        |Wether to create a managed identity|
+|Parameter                |Required|default      |Type        |Description|
+|-------------------------|--------|-------------|------------|-----------|
+|`tenant_id`              |true    |null         |string      |The tenant id|
+|`resourcegroup`          |true    |null         |string      |The name of the resource group|
+|`location`               |true    |null         |string      |The locality of the resource group|
+|`keyvault_name`          |true    |null         |string      |The unique name of the key vault|
+|`enable_purge_protection`|false   |false        |bool        |Wether to enable purge protection|
+|`acl_ip_whitelist`       |false   |[]           |list(string)|A list of addresses to whitelist for access. Eg. ["195.192.234.169/32"]|
+|`acl_default_action`     |false   |Allow        |string      |Action for requests from addresses not in the whitelist. (Allow or Deny)|
+|`acl_service_bypass`     |false   |AzureServices|string      |Bypass ACL (AzureServices or None)|
+|`secret_reader_groups`   |false   |[]           |list(string)|Name of the Azure AD groups to grant secret reader|
+|`vault_admin_groups`     |false   |[]           |list(string)|Name of the Azure AD groups to grant vault admin|
+|`create_az_application`  |false   |false        |bool        |Wether to create an Azure AD application and a certificate|
+|`create_managed_identity`|false   |false        |bool        |Wether to create a managed identity|
 
 ## Outputs
 The module outputs these variables.
