@@ -7,7 +7,7 @@ Terraform module for creating Azure Key Vaults with the following optional featu
 - Creation of an associated a managed identity for service authentication
 
 ## Parameters
-|Parameter                |Required|default      |Type        |Description|
+|Parameter                |Required|Default      |Type        |Description|
 |-------------------------|--------|-------------|------------|-----------|
 |`tenant_id`              |true    |null         |string      |The tenant id|
 |`resourcegroup`          |true    |null         |string      |The name of the resource group|
