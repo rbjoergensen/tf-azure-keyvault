@@ -21,11 +21,45 @@ variable "enable_purge_protection" {
   default = false
 }
 
-# Identity and authentication
-variable "identity_name" {
-  type = string
+# Network ACL (needs to be postfixed with the cidr eg. 201.45.11.67/32)
+variable "acl_ip_whitelist" {
+  type = list(string)
+  default = []
 }
 
-variable "application_name" {
+variable "acl_default_action" {
   type = string
+  default = "Allow"
+}
+
+variable "acl_service_bypass" {
+  type = string
+  default = "AzureServices"
+}
+
+# Access policies
+variable "secret_reader_groups" {
+  type = list(string)
+  default = []
+}
+
+variable "vault_admin_groups" {
+  type = list(string)
+  default = []
+}
+
+# Identity and authentication
+variable "create_az_application" {
+  type = bool
+  default = false
+}
+
+variable "create_managed_identity" {
+  type = bool
+  default = false
+}
+
+locals {
+  application_name = "keyvault-${var.keyvault_name}"
+  identity_name    = "keyvault-${var.keyvault_name}"
 }
