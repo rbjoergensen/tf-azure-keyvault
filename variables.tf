@@ -61,5 +61,6 @@ variable "create_managed_identity" {
 
 locals {
   application_name = "keyvault-${var.keyvault_name}"
+  certificate_name = "keyvault-${var.keyvault_name}"
   identity_name    = "keyvault-${var.keyvault_name}"
 }
